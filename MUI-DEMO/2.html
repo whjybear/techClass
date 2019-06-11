@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.css" rel="stylesheet" />
+		<style>
+			 
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">操作表-原生的模式</h1>
+		</header>
+		
+		<div class="mui-content" style="">
+			 <button id="btn1" type="button" class="mui-btn mui-btn-blue mui-btn-block">按钮</button>
+			 <span id="info"></span>
+		</div>
+		
+		<script src="../js/mui.js"></script>
+		<script src="../js/jquery-3.3.1.min.js"></script>
+
+		<script type="text/javascript">
+			mui.init();
+			
+			$("#btn1").on("tap",function(){
+				var btnArray = [{title:"拍照或录像"},{title:"选取现有的"}];
+				plus.nativeUI.actionSheet( {
+					title:"选择照片",
+					cancel:"取消",
+					buttons:btnArray
+				}, function(e){
+					var index = e.index;
+					var text = "你刚点击了\"";
+					switch (index){
+						case 0:
+							text += "取消";
+							break;
+						case 1:
+							text += "拍照或录像";
+							break;
+						case 2:
+							text += "选取现有的";
+							break;
+					}
+					info.innerHTML = text+"\"按钮";
+				} );
+			})
+			
+		</script>
+	</body>
+
+</html>

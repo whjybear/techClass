@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.css" rel="stylesheet" />
+		<style>
+
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">九宫格</h1>
+		</header>
+
+		<div class="mui-content" style="margin-top: 13px;">
+			<ul class="mui-table-view mui-grid-view mui-grid-9">
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+					<a href="#">
+						<span class="mui-icon mui-icon-home"></span>
+						<div class="mui-media-body">Home</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+					<a href="#">
+						<span class="mui-icon mui-icon-email"><span class="mui-badge mui-badge-red">5</span></span>
+						<div class="mui-media-body">Email</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+					<a href="#">
+						<span class="mui-icon mui-icon-chatbubble"></span>
+						<div class="mui-media-body">Chat</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+					<a href="#">
+						<span class="mui-icon mui-icon-location"></span>
+						<div class="mui-media-body">Location</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+					<a href="#">
+						<span class="mui-icon mui-icon-search"></span>
+						<div class="mui-media-body">Search</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+					<a href="#">
+						<span class="mui-icon mui-icon-phone"></span>
+						<div class="mui-media-body">Phone</div>
+					</a>
+				</li>
+			</ul>
+			
+			<h3>九宫格的布局，每行的按钮个数变化</h3>
+			<h3>文字、图标、背景的修改</h3>
+		</div>
+
+
+
+
+
+		<script src="../js/jquery-3.3.1.min.js"></script>
+		<script src="../js/mui.js"></script>
+
+
+		<script type="text/javascript">
+			//mui初始化
+			mui.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+
+			mui("#slider").slider({
+				interval: 2000
+			});
+		</script>
+	</body>
+
+</html>

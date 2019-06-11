@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.css" rel="stylesheet" />
+		<link href="../css/mui.picker.min.css" rel="stylesheet" />
+		
+		<style>
+
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">数字输入框</h1>
+		</header>
+
+		<div class="mui-content" style="margin-top: 13px;">
+			
+			<div class="mui-numbox" data-numbox-step='1' data-numbox-min='0' data-numbox-max='10'>
+				<button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+				<input class="mui-input-numbox" type="number" />
+				<button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+			</div>
+			
+			<hr >
+			<h3>最大、最小值的设置</h3>
+			<h3>样式的修改</h3>
+			<h3>值的获取</h3>
+		</div>
+
+
+
+
+
+		<script src="../js/jquery-3.3.1.min.js"></script>
+		<script src="../js/mui.js"></script>
+		<script src="../js/mui.picker.min.js"></script>
+		
+		<!-- 导入js数据 -->
+		<script src="../js/city.data.js" type="text/javascript" charset="utf-8"></script>
+
+		<script type="text/javascript">
+			//mui初始化
+			mui.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+			 
+			// 选择单一的数据
+			$("#btn1").on("tap", function() {
+				var picker = new mui.PopPicker();
+				picker.setData([{
+					value: 'zz',
+					text: '智子'
+				},{
+					value: 'yy',
+					text: '丽丽'
+				},{
+					value: 'ff',
+					text: '芳芳'
+				}]);
+				picker.show(function(e){
+					// alert(e[0].text);
+					$("#span1").html(e[0].text);
+				})
+
+			})
+			
+			//显示省和城市
+			$("#btn2").on("tap", function() {
+				//选择家乡
+				var cityPicker = new mui.PopPicker({
+							layer: 2
+				});
+				cityPicker.setData(cityData);
+				
+				cityPicker.show(function(items){
+					$("#span2").html(items[0].text + "-" + items[1].text);
+				})
+			})
+			
+			//显示日期时间组件
+			$("#btn3").on("tap", function() {
+				var options = {
+					//todo 使用不同的配置参数,获得组件不同的显示效果
+				};
+				var dtPicker = new mui.DtPicker(options); 
+				
+				dtPicker.show(function(items){
+					$("#span3").html(items.y.text + '-' + items.m.text + '-' + items.d.text);
+				})
+			})
+			
+		</script>
+	</body>
+
+</html>

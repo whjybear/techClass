@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">js数据结构</h1>
+		</header>
+		<div class="mui-content">
+			<p>
+				js当中的数据类型和基本操作1基本类型
+			</p>
+			
+			<button type="button" class="mui-btn mui-btn-blue " id="btn1">按钮1</button>
+			
+		</div>
+		<script src="../js/jquery-3.3.1.min.js"></script>
+
+		<script src="../js/mui.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			// js当中的数据类型和基本操作
+			var name;
+			var age;
+			var uHeigth;
+			name = "zhangsan";
+			age = 18;
+			uHeigth = 170.12;
+			//字符串和数值类型
+			//类型的基本转换
+			// 字符串---->数值
+			// parseFloat("170.12");  parseInt()
+			
+			//数值--->字符串
+			// alert(age.toString());
+			// alert(18 + "");
+			
+			
+			$("#btn1").on("tap",function(){
+				//这里也要注意下面这几个变量的作用域问题
+				
+				alert(name);
+				alert(age);			
+				alert(uHeigth);			
+			});
+			
+		</script>
+	</body>
+
+</html>

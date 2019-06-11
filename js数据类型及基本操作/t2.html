@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">js数据结构</h1>
+		</header>
+		<div class="mui-content">
+			<p>
+				js当中的数据类型和基本操作2数组
+			</p>
+			
+			<button type="button" style="margin: 10px;" class="mui-btn mui-btn-blue " id="btn1">打印成绩数组</button>
+			<button type="button" style="margin: 10px;" class="mui-btn mui-btn-blue " id="btn2">打印选择后的数组</button>
+			<button type="button" style="margin: 10px;" class="mui-btn mui-btn-blue " id="btn3">打印排序后的数组</button>
+		</div>
+		<script src="../js/jquery-3.3.1.min.js"></script>
+
+		<script src="../js/mui.js"></script>
+		<script type="text/javascript">
+			//数组类型,对象类型：json类型(js对象类型)
+			var  allGrades = [87,84,99,54,90];
+			
+			//数组元素的引用,下标范围,超出显示undefined
+			// alert(allGrades[1]);
+			// alert(allGrades.length);
+			//数组元素的遍历
+// 			for(var i = 0 ; i < allGrades.length; i++){
+// 				alert(allGrades[i]);
+// 			}
+			//数组是引用类型
+			var b = allGrades;
+			b[0] = 188;
+			//数组元素的排序
+			//打印成绩数组
+			$("#btn1").on("tap",function(){
+				pringArray(allGrades);
+			});
+			
+			//打印按照要求选择后的数组
+			$("#btn2").on("tap",function(){
+				//数组元素的选择过滤
+				c = []
+				//大于90的元素选择出来
+				for(var i = 0 ; i < allGrades.length; i++){
+					if(allGrades[i] > 90){
+						c.push(allGrades[i]);
+					}
+				};
+				pringArray(c);
+			});
+			
+			//打印排序后的数组
+			$("#btn3").on("tap",function(){
+				
+				allGrades.sort(function(a,b){
+					//升序
+					// return a > b;
+					//降序
+					return a < b;
+				});
+				pringArray(allGrades);
+				
+			});
+			
+			//显示出一个数组的所有的元素
+			function pringArray( objArray){
+				var outLine = "";
+				for(var i = 0 ; i < objArray.length; i++){
+					outLine += objArray[i];
+					if(i != objArray.length-1){
+						outLine += ",";
+					}
+				};
+				alert(outLine);
+			}
+		</script>
+	</body>
+
+</html>

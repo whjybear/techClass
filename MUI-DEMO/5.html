@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.css" rel="stylesheet" />
+		<style>
+
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">按钮</h1>
+		</header>
+
+		<div class="mui-content" style="margin-top: 13px;">
+			<button type="button" class="mui-btn">默认</button>
+			<button type="button" class="mui-btn mui-btn-primary">蓝色</button>
+			<button type="button" class="mui-btn mui-btn-success">绿色</button>
+			<button type="button" class="mui-btn mui-btn-warning">黄色</button>
+			<button type="button" class="mui-btn mui-btn-danger">红色</button>
+			<button type="button" class="mui-btn mui-btn-royal">紫色</button>
+
+			<br><br>
+			<button type="button" class="mui-btn mui-btn-outlined">默认</button>
+			<button type="button" class="mui-btn mui-btn-primary mui-btn-outlined">蓝色</button>
+			<button type="button" class="mui-btn mui-btn-success mui-btn-outlined">绿色</button>
+			<button type="button" class="mui-btn mui-btn-warning mui-btn-outlined">黄色</button>
+			<button type="button" class="mui-btn mui-btn-danger mui-btn-outlined">红色</button>
+			<button type="button" class="mui-btn mui-btn-royal mui-btn-outlined">紫色</button>
+			
+			<br><br>
+			<button type="button" style="height: 100px;" class="mui-btn mui-btn-success">绿色1234567890</button>
+			
+			<br><br>
+			点击按钮后，显示加载，5秒后还原<br>
+			<button id="sendBtn" type="button" data-loading-text="提交中" data-loading-icon-position="right" class="mui-btn mui-btn-royal">上传</button>
+
+			
+			
+		</div>
+
+
+		<script src="../js/jquery-3.3.1.min.js"></script>
+		<script src="../js/mui.js"></script>
+
+
+		<script type="text/javascript">
+			mui.init();
+			
+			$("#sendBtn").on("tap",function(){
+				mui("#sendBtn").button('loading');//切换为loading状
+				
+				//5秒钟后按钮还原
+				setTimeout(function(){
+					mui("#sendBtn").button('reset');//切换为reset状态(即重置为原始的button)
+				},3000);
+			})
+		</script>
+	</body>
+
+</html>

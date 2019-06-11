@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		
+		<div style="text-align: center;">
+			<div>
+				<input id="inputText" type="text" value="123" />
+				<button onclick="startSelect()">开始</button>
+				<button onclick="location.reload();">重置</button>
+
+			</div>
+			
+			<div>
+				<ul id="myUl" style="list-style-type: none;">
+					<li>1212</li>
+					<li>123</li>
+
+					<li>44</li>
+					<li>123</li>
+				</ul>
+				
+			</div>
+			
+		</div>
+		
+		<script>
+			function startSelect(){
+				var txtValue = document.getElementById("inputText").value;
+				// alert(txtValue);
+				var myUl = document.getElementById("myUl");
+				var myLis = document.getElementsByTagName("li");
+				// alert(myLis.length);
+				for(var i = 0 ; i < myLis.length; i++){
+					// alert(myLis[i].innerText.indexOf("abc"));
+					if(myLis[i].innerText.indexOf(txtValue) == -1){
+						//没有包含输入文字
+						
+						myUl.removeChild(myLis[i]);
+						i--; //这里删除元素后,数组的总个数剪了1
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

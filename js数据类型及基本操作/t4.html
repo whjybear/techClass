@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">js数据结构</h1>
+		</header>
+		<div class="mui-content">
+			<p>
+				js当中的数据类型和基本操作2JSON对象和JSON字符串 转换
+			</p>
+			
+			<button type="button" class="mui-btn mui-btn-blue " id="btn1">json对象转字符串</button>
+			<button type="button" class="mui-btn mui-btn-blue " id="btn2">json对象数组转字符串</button>
+
+			
+		</div>
+		<script src="../js/jquery-3.3.1.min.js"></script>
+
+		<script src="../js/mui.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			//json对象  互转  字符串
+			var person = {
+				name : "张喻",
+				age : 18,
+				likes : [
+					{name:"足球"},{name:"乒乓"}
+				]
+			}
+			//json对象数组  互转  字符串
+			var personList = [person,person,person];
+			
+			$("#btn1").on("tap",function(){
+				 //直接输出是一个对象类型
+				 // alert(person);
+				 //对象转成字符串
+				 alert(JSON.stringify(person));
+				 alert(typeof(JSON.stringify(person)));   //string
+				 console.log(JSON.stringify(person));
+			});
+			
+			$("#btn2").on("tap",function(){
+				 //直接输出是一个对象类型
+				 alert(personList);
+				 //对象数组转成字符串
+				 alert(JSON.stringify(personList));
+				 alert(typeof(JSON.stringify(personList)));   //string
+				 console.log(JSON.stringify(personList));
+			});
+			
+		</script>
+	</body>
+
+</html>

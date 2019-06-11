@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.css" rel="stylesheet" />
+		<link href="../css/mui.picker.min.css" rel="stylesheet" />
+		
+		<style>
+
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">选择器（多种类型）</h1>
+		</header>
+
+		<div class="mui-content" style="margin-top: 13px;">
+			<h3>触发选择组件，用户选择后，读取选择的数据</h3>
+			<h3>注意本案例中，需要引入的css和js文件</h3>
+			<hr >
+			<button id="btn1" type="button" class="mui-btn mui-btn-blue">选择单一数据</button>
+
+			<h3>已经选择的数据是：</h3>
+			<span id="span1"></span>
+			<hr >
+			<h3>省份、城市的选择</h3>
+			<button id="btn2" type="button" class="mui-btn mui-btn-blue">选择城市</button>
+			<h3>已经选择的城市是：</h3>
+			<span id="span2"></span>
+			<hr >
+			日期时间的选择
+			<button id="btn3" type="button" class="mui-btn mui-btn-blue">选择日期</button>
+			<span id="span3"></span>
+		</div>
+
+
+
+
+
+		<script src="../js/jquery-3.3.1.min.js"></script>
+		<script src="../js/mui.js"></script>
+		<script src="../js/mui.picker.min.js"></script>
+		
+		<!-- 导入js数据 -->
+		<script src="../js/city.data.js" type="text/javascript" charset="utf-8"></script>
+
+		<script type="text/javascript">
+			//mui初始化
+			mui.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+			 
+			// 选择单一的数据
+			$("#btn1").on("tap", function() {
+				var picker = new mui.PopPicker();
+				picker.setData([{
+					value: 'zz',
+					text: '智子'
+				},{
+					value: 'yy',
+					text: '丽丽'
+				},{
+					value: 'ff',
+					text: '芳芳'
+				}]);
+				picker.show(function(e){
+					// alert(e[0].text);
+					$("#span1").html(e[0].text);
+				})
+
+			})
+			
+			//显示省和城市
+			$("#btn2").on("tap", function() {
+				//选择家乡
+				var cityPicker = new mui.PopPicker({
+							layer: 2
+				});
+				cityPicker.setData(cityData);
+				
+				cityPicker.show(function(items){
+					$("#span2").html(items[0].text + "-" + items[1].text);
+				})
+			})
+			
+			//显示日期时间组件
+			$("#btn3").on("tap", function() {
+				var options = {
+					//todo 使用不同的配置参数,获得组件不同的显示效果
+				};
+				var dtPicker = new mui.DtPicker(options); 
+				
+				dtPicker.show(function(items){
+					$("#span3").html(items.y.text + '-' + items.m.text + '-' + items.d.text);
+				})
+			})
+			
+		</script>
+	</body>
+
+</html>

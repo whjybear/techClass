@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">d</h1>
+		</header>
+		<div class="mui-content">
+			<p>
+				JS 详解 Cookie、 LocalStorage 与 SessionStorage
+				https://www.cnblogs.com/minigrasshopper/p/8064367.html
+			</p>
+			<p>
+				显示接收到的数据：
+			</p>
+		</div>
+		<script src="../js/mui.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			
+			mui.plusReady(function(){
+				var self = plus.webview.currentWebview();
+				name = self.name;
+				p1 = self.p1;
+				alert(name);
+				alert(p1);
+			})
+			
+		</script>
+	</body>
+
+</html>

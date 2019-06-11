@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">js数据结构</h1>
+		</header>
+		<div class="mui-content">
+			<p>
+				js当中的数据类型和基本操作2对象和JSON操作
+			</p>
+			
+			<button type="button" style="margin: 10px;" class="mui-btn mui-btn-blue " id="btn1">打印json对象</button>
+			<button type="button" style="margin: 10px;" class="mui-btn mui-btn-blue " id="btn2">打印json对象2</button>
+			<button type="button" style="margin: 10px;" class="mui-btn mui-btn-blue " id="btn3">打印json对象3</button>
+			<button type="button" style="margin: 10px;" class="mui-btn mui-btn-blue " id="btn4">打印json对象数组</button>
+
+		</div>
+		<script src="../js/jquery-3.3.1.min.js"></script>
+
+		<script src="../js/mui.js"></script>
+		<script type="text/javascript">
+			
+			//传统写法:
+			function Dog(id,name,food){
+				this.id = id;
+				this.name = name;
+				this.likeFood = food;
+				this.cry = function(){
+					alert("小狗汪汪汪。。。");
+				}
+			}
+			//创建对象,使用构造方法,初始化字段的值
+			var dog1 = new Dog("33434","d001","苹果");
+			
+			var dog2 = new Dog();
+			//修改对象的各个字段的值
+			dog2.name = "hello101斑点狗";
+			dog2.likeFood = "香蕉";
+			 
+			//打印对象
+			$("#btn1").on("tap",function(){
+				// alert(dog1);
+				// alert(dog1.likeFood);
+				
+				// alert(dog2.name);
+				dog2.cry();
+			});
+			
+			//当前的写法
+			
+			var cat1 = {
+				//采用JSON的数据类型格式,来写对象的成员(数据或方法)
+				name:"kitty",
+				age:18,
+				cry:function(){
+					alert("喵喵。。");
+				}
+			}
+			//打印对象
+			$("#btn2").on("tap",function(){
+				cat1.cry();
+				alert(cat1.name);
+			});
+			
+			//对象的字段,也可以是一个对象
+			var cat2 = {
+				name:"kitty",
+				belongTo:{
+					name:"Tom",
+					address:"黄山路12344"
+				}
+			}
+			//学会使用浏览器控制台,查看页面的js数据
+			$("#btn3").on("tap",function(){
+				alert(cat2.belongTo.address);
+			});
+			//json对象数组
+			//数组的元素可以是对象
+			// 打印json对象数组
+			var catList = [];
+			var cat4 = {
+				name:"kitty4",
+				belongTo:{
+					name:"Tom4",
+					address:"黄山路4444"
+				}
+			}
+			var cat5 = {
+				name:"kitty5",
+				belongTo:{
+					name:"Tom5",
+					address:"黄山路5555"
+				}
+			}
+			var cat6 = {
+				name:"kitty6",
+				belongTo:{
+					name:"Tom6",
+					address:"黄山路6"
+				}
+			}
+			catList.push(cat4);
+			catList.push(cat5);
+			catList.push(cat6);
+			$("#btn4").on("tap",function(){
+				alert(catList[0]);
+				alert(catList[0].belongTo.address);
+
+			});
+		</script>
+	</body>
+
+</html>

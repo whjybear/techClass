@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">b</h1>
+		</header>
+		<div class="mui-content">
+			<p>
+				显示接收到的数据：
+			</p>
+		</div>
+		<script src="../js/mui.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			alert(localStorage.getItem("name"));
+			alert(localStorage.getItem("p1"));
+			alert(localStorage.getItem("p1").name); //不能取到
+			alert(JSON.parse(localStorage.getItem("p1")).name); //能取到
+			//使用localStorage的存储方式的原理的利弊
+		</script>
+	</body>
+
+</html>
